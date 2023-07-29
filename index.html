@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+	<title>Frontend Mentor | Advice generator app</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+
+	<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+	<style>
+		.attribution {
+			font-size: 11px;
+			text-align: center;
+		}
+
+		.attribution a {
+			color: hsl(228, 45%, 44%);
+		}
+	</style>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						cyan: 'hsl(193, 38%, 86%)',
+						neon: 'hsl(150, 100%, 66%)',
+						grayblue: 'hsl(217, 19%, 38%)',
+						darkgrayblue: 'hsl(217, 19%, 24%)',
+						darkblue: 'hsl(218, 23%, 16%)'
+					}
+				},
+				fontSize: {
+					'base': '1.5rem'
+				},
+				fontFamily: {
+					'manrope': 'Manrope, sans-serif'
+				},
+				boxShadow: {
+					'2xl': '0 0px 40px 0 rgb(82, 255, 168, .3)',
+				}
+			}
+		}
+	</script>
+</head>
+
+<body class="flex flex-col justify-center items-center min-h-screen bg-darkblue font-manrope">
+
+	<main id="app" class="bg-darkgrayblue max-w-lg w-5/6 py-10 px-6 md:p-12 rounded-xl font-manrope relative">
+		<div class="relative mb-8 min-h-[13.5rem]">
+			<p class="text-center">
+			<div class="text-neon text-center">Advice # {{adviceId}}</div>
+			<blockquote class="text-cyan text-base text-center pt-6 pb-8">
+				"{{ adviceText }}"
+			</blockquote>
+			</p>
+			<picture class="block absolute bottom-0 w-full">
+				<source srcset="./images/pattern-divider-desktop.svg" media="(min-width: 35.5rem)">
+				<img class="w-full" src="./images/pattern-divider-mobile.svg" alt="" aria-hidden="true">
+			</picture>
+		</div>
+		<button @click="newAdvice"
+			class="block w-[64px] h-[64px] absolute -bottom-[64px] left-1/2 transform 
+			-translate-x-1/2 -translate-y-1/2 bg-neon rounded-full flex justify-center items-center hover:cursor-pointer hover:shadow-2xl hover:shadow-neon">
+			<img src="./images/icon-dice.svg" alt="">
+		</button>
+	</main>
+	<div class="attribution mt-12">
+		Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+		Coded by <a href="#">Franci Melink</a>.
+	</div>
+	<script src="./scripts/main.js"></script>
+</body>
+
+</html>

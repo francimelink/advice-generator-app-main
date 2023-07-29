@@ -2,7 +2,7 @@ const app = Vue.createApp({
     data() {
         return {
             adviceId: 1,
-            adviceText: 'Franci Pintarju',
+            adviceText: '',
         }
     },
     methods: {

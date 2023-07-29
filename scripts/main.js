@@ -5,6 +5,9 @@ const app = Vue.createApp({
             adviceText: '',
         }
     },
+    mounted() {
+        this.newAdvice()
+    },
     methods: {
         newAdvice: function () {
             fetch('https://api.adviceslip.com/advice')
